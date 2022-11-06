@@ -7,7 +7,7 @@
   <div class="box">
     <!-- Блок, де будуть виводитися повідомлення -->
     <div class="messages">
-      <div *ngFor="let user of messages">
+      <div *ngFor="let user of messages" class="message">
         {{user.name}}: {{user.message}}
       </div>
     </div>

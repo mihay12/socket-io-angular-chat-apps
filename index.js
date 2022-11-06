@@ -97,17 +97,17 @@ io.on("connection", (socket) => {
     const outgoingMessage = {
       name: socket.user.name,
       id: socket.user.iat,
-      message
+      message,
     };
 
-    // Відправити на фронтенд сокет-повідомлення 
+    // Відправити на фронтенд сокет-повідомлення
     // всім в кімнаті, окрім відправника
     socket.to(roomName).emit("message", outgoingMessage);
 
     //відправка зворотнього зв'язку
     callback({
       status: "ok",
-      outgoingMessage
+      outgoingMessage,
     });
 
     // Відправити всім, включаючи відправника

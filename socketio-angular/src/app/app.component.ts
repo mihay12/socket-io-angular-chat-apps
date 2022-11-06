@@ -14,6 +14,7 @@ const SENDER = {
 })
 export class AppComponent implements OnInit, OnDestroy {
   messages = [];
+  name: any;
 
   // id каналу чату, яке буде мінятися динамічно в режимі реального часу
   CHAT_ROOM = 'myRandomChatRoomId';
@@ -62,11 +63,13 @@ export class AppComponent implements OnInit, OnDestroy {
       this.socketService.sendMessage(
         { message, roomName: this.CHAT_ROOM },
         (cb) => {
-          // debugger
+          document.getElementsByClassName('message')[
+            document.getElementsByClassName('message').length - 1
+          ].innerHTML = `${cb.outgoingMessage.name}: ${cb.outgoingMessage.message}`;
           console.log('ACKNOWLEDGEMENT ', cb);
         }
       );
-        // debugger
+
       this.messages = [
         ...this.messages,
         {
