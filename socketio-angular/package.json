@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path dist --base-href /angular-ghpages/",
+    "build": "ng build --output-path dist --base-href /socket-io-angular-chat-apps/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "watch": "ng build --watch --configuration development",
